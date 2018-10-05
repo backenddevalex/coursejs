@@ -19,8 +19,11 @@ let appData = {
 
 let coins = prompt('Введите обязательную статью расходов в этом месяце');
 let expense = prompt('Во сколько обойдётся?');
+let coin = prompt('Введите обязательную статью расходов в этом месяце');
+let epx = prompt('Во сколько обойдётся?');
 
-appData.expenses[coins]=expense;
+
+appData.expenses[coins, coin]=expense, epx;
 
 // Созданные переменные в итоге были добавлены внутренний свойством в внутренний обьект expense
 

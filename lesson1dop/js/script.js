@@ -8,6 +8,7 @@ console.log(answer);
 
 var power = 3;
 alert(answer ** power);
+alert(20);
 
 // Возводится в степень 3 по оператору из нового стандарта, оператор работает.
 
