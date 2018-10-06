@@ -20,7 +20,7 @@ let appData = {
 let coinsOne = prompt('Введите обязательную статью расходов в этом месяце', '');
 let expenseOne = prompt('Во сколько обойдётся?', '');
 let coinsTwo = prompt('Введите обязательную статью расходов в этом месяце', '');
-let expenseTwo= prompt('Во сколько обойдётся?', '');
+let expenseTwo = prompt('Во сколько обойдётся?', '');
 
 
 appData.expenses[coinsOne]=expenseOne;
@@ -29,7 +29,7 @@ console.log(appData.expenses);
 
 // Созданные переменные в итоге были добавлены внутренний свойством в внутренний обьект expense
 
-alert(money/30);
+alert(money / 30);
 
 
 
