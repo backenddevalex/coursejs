@@ -35,7 +35,6 @@ for (let i = 0; i < 2; i++) {
     console.log('done')
     appData.expenses.coinsOne = expenseOne;
   } else {
-    i < 1;
     i--;
     alert("Данные неверны, пожалуйста введите снова");
   }
