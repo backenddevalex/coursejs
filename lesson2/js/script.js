@@ -30,12 +30,12 @@ for (let i = 0; i < 2; i++) {
   let expenseOne = prompt('Во сколько обойдётся?', '');
 
 
-  if ( (typeof(coinsOne))=== "string" && (typeof(coinsOne)) != null && (typeof(expenseOne) != null
-  && coinsOne != '' && expenseOne != '' && coinsOne.length <50)) {
+  if ( (typeof(coinsOne))=== "string" && coinsOne != null && expenseOne != null
+  && coinsOne != '' && expenseOne != '' && coinsOne.length <50) {
     console.log('done')
     appData.expenses.coinsOne = expenseOne;
   } else {
-    i--;
+     i--;
     alert("Данные неверны, пожалуйста введите снова");
   }
 };
