@@ -47,17 +47,17 @@ function detectDayBudget() {
    alert("Ежедневный бюджет: " + appData.moneyPerDay);
 }
 
-detectDayBudget();
+// detectDayBudget();
 
 function detectLevel() {
    if(appData.moneyPerDay < 100) {
-    console.log("Минимальный уровень достатка")
+    console.log("Минимальный уровень достатка");
     } else if (appData.moneyPerDay > 100 && appData.moneyPerDay < 2000) {
-    console.log("Средний уровень достатка")
+    console.log("Средний уровень достатка");
     } else if (appData.moneyPerDay < 2000) {
-    console.log("Высокий  уровень достатка")
+    console.log("Высокий  уровень достатка");
     } else {
-    console.log("Ошибка расчета")
+    console.log("Ошибка расчета");
     } 
 }
 
@@ -70,7 +70,7 @@ function checkedSavings() {
             percent = +prompt("Под какой процент?");
 
 
-        appData.monthIncome = save/100/12*percent;
+        appData.monthIncome = save/100/12*percent.toFixed();
         alert("Доход в месяц с вашего депозита: " + appData.monthIncome);    
     }
 }
@@ -80,9 +80,10 @@ checkedSavings();
 
 
 function chooseOptExpenses () {
-    for (let c = 1 ; c < 4; c++) {
-        let nonBindExp = prompt("Статья необязательных расходов?", "");
-        appData.optionalExpenses[c] = nonBindExp;
+    for (let i = 1 ; i < 4; i++) {
+        let nonBindExp = prompt("Статья необязательных расходов?", ""); {
+        appData.optionalExpenses[i] = nonBindExp;
+        }
     }
 }
 
