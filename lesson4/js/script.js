@@ -86,14 +86,16 @@ let appData = {
            document.write(" Способы доп.заработка: " + (i+1) +"." + item +"<br>");
         }); 
         
-        for (let key in appData) {
-        console.log("Наша программа включает в себя данные:" + (key));
-         };  
+         
     
     }
    
 };
 
     
+function showMass() {
+   for (let key in appData) {
+        console.log("Наша программа включает в себя данные:" + (key));
+         }; 
+};
 
- 
