@@ -82,15 +82,18 @@ let appData = {
             
             }
         } 
-        appData.income.forEach(function(item) {
-            alert("Способы доп.заработка: " + appData.income);
-        });
-    }
+        appData.income.forEach(function(item, i) {
+           document.write(" Способы доп.заработка: " + (i+1) +"." + item +"<br>");
+        }); 
+        
+        for (let key in appData) {
+        console.log("Наша программа включает в себя данные:" + (key));
+         };  
     
+    }
+   
 };
 
-for (let key in appData) {
-    console.log("Наша программа включает в себя данные:" + (key));
-};
+    
 
-
+ 
