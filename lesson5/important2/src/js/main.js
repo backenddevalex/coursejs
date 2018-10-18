@@ -2,8 +2,9 @@
 
 let beginPay = document.getElementById ("start"),
     inpExp = document.getElementsByClassName('expenses-item'),
-    btnOne = document.getElementsByTagName('button.expenses-item-btn'),
-    btnTwo = document.getElementsByTagName('button.count-budget-btn'),
+    btnOne = document.getElementsByTagName('button.expenses-item-btn')[0],
+    btnTwo = document.getElementsByTagName('button.count-budget-btn')[1],
+    btnThree = document.getElementsByTagName("button")[2],
     optExp = document.querySelectorAll(".optionalexpenses-item"),
     possInc = document.querySelector(".choose-income"),
     checkBox = document.querySelector("#savings"),
@@ -12,7 +13,7 @@ let beginPay = document.getElementById ("start"),
     year = document.querySelector(".year-value"),
     month = document.querySelector(".month-value"),
     times = document.querySelector(".day-value");
-    console.log(btnOne, btnTwo);
+    
 
 
 
