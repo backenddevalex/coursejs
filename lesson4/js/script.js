@@ -93,9 +93,10 @@ let appData = {
 };
 
     
-function showMass() {
+function showmass() {
    for (let key in appData) {
         console.log("Наша программа включает в себя данные:" + (key));
          }; 
+  
 };
 
