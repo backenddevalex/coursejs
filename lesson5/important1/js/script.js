@@ -22,7 +22,7 @@ title.textContent = "Мы продаем только подлинную тех�
 adv.remove();
 
 let ask = prompt('Ваше отношение к технике Аpple?', '');
-answer.textContent = '';
+answer.textContent = ask;
 
 
 
