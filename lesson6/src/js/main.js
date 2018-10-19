@@ -27,6 +27,9 @@ let beginPay = document.getElementById ("start"), // Кнокпа Начать �
   
    
     let money , time;
+    btnThree.disabled = true;
+    
+
 
 
 beginPay.addEventListener("click", function() {
@@ -136,6 +139,39 @@ perc.addEventListener("input", function() {
 });
 
 btnOne.disabled = true;
+    for (let q = 0; q < expensesItem.length; q++) {
+    
+        expensesItem[q].addEventListener("input", function() {
+        for (let i = 0; i < expensesItem.length; i++) {
+            if (expensesItem[i].value != "") {
+                btnOne.disabled = false;
+                btnThree.disabled = false;
+            } else {
+                btnOne.disabled = true;
+            }
+        }
+    })
+};
+
+
+btnTwo.disabled = true;
+    for (let q = 0; q < optionalExpensesItem.length; q++) {
+    
+        optionalExpensesItem[q].addEventListener("input", function() {
+        for (let i = 0; i < optionalExpensesItem.length; i++) {
+            if (optionalExpensesItem[0].value != "") {
+                btnTwo.disabled = false;
+            } else {
+                btnTwo.disabled = true;
+            }
+        }
+    })
+};
+
+
+
+
+    
 
 
 
