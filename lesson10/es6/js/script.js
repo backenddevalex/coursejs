@@ -1,9 +1,9 @@
 class Options {
-  constructor (height, width, textAlign, background, fontSize) {
+  constructor (height, width, textAlign, bg, fontSize) {
       this.height = height + 'px';
       this.width = width + 'px';
       this.textAlign = textAlign;
-      this.background  = background;
+      this.bg  = bg;
       this.fontSize = fontSize + 'px';
 }
 
@@ -12,7 +12,10 @@ showDiv() {
     // div.className = "element";
     div.innerHTML = "<strong>Здесь какой-то важный текст</strong>";
     document.body.appendChild(div);
-    div.style.cssText = `height: ${this.height}`;
+    div.style.cssText = `height: ${this.height}`; `width: ${this.width}`;
+    
+    
+    alert(div.style.cssText);
     
 
     
@@ -22,7 +25,7 @@ showDiv() {
 
 }
 
-let makeDiv = new Options(50, 500, "center", "red", 50);
+let makeDiv = new Options(50, 100, 'center', 'red', 50);
 makeDiv.showDiv();
 
 

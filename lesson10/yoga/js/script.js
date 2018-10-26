@@ -5,22 +5,29 @@ window.addEventListener("DOMContentLoaded", () => {
         info = document.querySelector(".info-header"),
         tabContent = document.querySelectorAll(".info-tabcontent");
 
-  function hideTab(a) {
-      for (let i = a; i < tabContent.length; i++) {
+  
+      let hideTab = (a) => {
+         for (let i = a; i < tabContent.length; i++) {
         tabContent[i].classList.remove("show");
         tabContent[i].classList.add("hide");
-      }
-  };
+         }  
+            
+        };
+
+     
+ 
   
   hideTab(1);
 
-  function showTab(b) {
-    if (tabContent[b].classList.contains("hide")) {
+  
+      let showTab = (b) => {
+          if (tabContent[b].classList.contains("hide")) {
       tabContent[b].classList.remove("hide");
       tabContent[b].classList.add("show");
-
       }
-  };
+        
+      };
+  
 
   info.addEventListener("click", (event) => {
       let target = event.target;
@@ -33,13 +40,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
             }
         }
-    })
+    });
 
     //Таймер
 
     let deadLine = "2018-10-21";
 
-    function getTime(endtime) {
+    let getTime = (endtime) => {
         let t = Date.parse(endtime) - Date.parse(new Date()),
             seconds = Math.floor((t/1000) % 60),
             minutes = Math.floor((t/1000/60) % 60),
@@ -55,7 +62,7 @@ window.addEventListener("DOMContentLoaded", () => {
             };
     }
 
-        function setClock(id, endtime) {
+        let setClock = (id, endtime) => {
             let timer = document.getElementById(id),
                 hours = timer.querySelector(".hours"),
                 minutes = timer.querySelector(".minutes"),
