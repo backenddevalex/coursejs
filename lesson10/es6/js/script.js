@@ -3,19 +3,19 @@ class Options {
       this.height = height + 'px';
       this.width = width + 'px';
       this.textAlign = textAlign;
-      this.bg  = bg;
+      this.bg = bg;
       this.fontSize = fontSize + 'px';
 }
 
 showDiv() {
-  let div = document.createElement("div");
+  let dive = document.createElement("div");
     // div.className = "element";
-    div.innerHTML = "<strong>Здесь какой-то важный текст</strong>";
-    document.body.appendChild(div);
-    div.style.cssText = `height: ${this.height}`; `width: ${this.width}`;
+    dive.innerHTML = "<strong>Здесь какой-то важный текст</strong>";
+    document.body.appendChild(dive);
+    dive.style.cssText = `height: ${this.height}; width: ${this.width}; textAlign: ${this.textAlign}; bg: ${this.bg}; fontSize: ${this.fontSize}`;
     
     
-    alert(div.style.cssText);
+    alert(dive.style.cssText);
     
 
     
@@ -25,7 +25,7 @@ showDiv() {
 
 }
 
-let makeDiv = new Options(50, 100, 'center', 'red', 50);
+let makeDiv = new Options(50, 100, "left", "blue", 50);
 makeDiv.showDiv();
 
 
