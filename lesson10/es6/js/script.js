@@ -1,18 +1,18 @@
 class Options {
-  constructor (height, width, textAlign, bg, fontSize) {
+  constructor (height, width, bg, fontSize, textAlign) {
       this.height = height + 'px';
       this.width = width + 'px';
-      this.textAlign = textAlign;
       this.bg = bg;
       this.fontSize = fontSize + 'px';
+      this.textAlign = textAlign;
 }
 
 showDiv() {
   let dive = document.createElement("div");
     // div.className = "element";
-    dive.innerHTML = "<strong>Здесь какой-то важный текст</strong>";
+    dive.innerHTML = "<strong>Текст</strong>";
     document.body.appendChild(dive);
-    dive.style.cssText = `height: ${this.height}; width: ${this.width}; textAlign: ${this.textAlign}; bg: ${this.bg}; fontSize: ${this.fontSize}`;
+    dive.style.cssText = `height: ${this.height}; width: ${this.width}; background-color: ${this.bg}; text-align: ${this.textAlign}; font-size: ${this.fontSize};`
     
     
     alert(dive.style.cssText);
@@ -25,7 +25,7 @@ showDiv() {
 
 }
 
-let makeDiv = new Options(50, 100, "left", "blue", 50);
+let makeDiv = new Options(50, 100, 'red', 20, 'center');
 makeDiv.showDiv();
 
 
