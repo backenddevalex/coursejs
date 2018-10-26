@@ -102,14 +102,14 @@ window.addEventListener("DOMContentLoaded", () => {
             overl = document.querySelector(".overlay"),
             close = document.querySelector(".popup-close");
 
-            more.addEventListener("click", () => {
+            more.addEventListener("click", function() {
                 overl.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
-            close.addEventListener("click", () => {
+            close.addEventListener("click", function()  {
                 overl.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -124,14 +124,14 @@ window.addEventListener("DOMContentLoaded", () => {
             overlay = document.querySelector(".overlay"),
             closen = document.querySelector(".popup-close");
 
-            descript.addEventListener("click", () => {
+            descript.addEventListener("click", function(){
                 overlay.style.display = "block"; 
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
-            closen.addEventListener("click", () => {
+            closen.addEventListener("click", function(){
                 overlay.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -145,14 +145,14 @@ window.addEventListener("DOMContentLoaded", () => {
             z = document.querySelector(".overlay"),
             c = document.querySelector(".popup-close");
 
-            descripton.addEventListener("click", () => {
+            descripton.addEventListener("click", function(){
                 z.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
-            c.addEventListener("click", () => {
+            c.addEventListener("click", function() {
                 z.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -165,14 +165,14 @@ window.addEventListener("DOMContentLoaded", () => {
             o = document.querySelector(".overlay"),
             cl = document.querySelector(".popup-close");
 
-            d.addEventListener("click", () => {
+            d.addEventListener("click", function(){
                 o.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
-            cl.addEventListener("click", () => {
+            cl.addEventListener("click", function(){
                 o.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -185,14 +185,14 @@ window.addEventListener("DOMContentLoaded", () => {
             over = document.querySelector(".overlay"),
             cloz = document.querySelector(".popup-close");
 
-            desc.addEventListener("click", () => {
+            desc.addEventListener("click", function() {
                 over.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
-            cloz.addEventListener("click", () => {
+            cloz.addEventListener("click", function() {
                 over.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
