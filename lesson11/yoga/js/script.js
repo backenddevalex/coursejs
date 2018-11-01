@@ -180,7 +180,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
             
-            //Модальное окно desription-btn(3)
+            //Модальное окно desription-btn(3)321
             let desc = document.getElementsByClassName("description-btn")[3],
             over = document.querySelector(".overlay"),
             cloz = document.querySelector(".popup-close");
