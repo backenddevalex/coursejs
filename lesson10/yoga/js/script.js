@@ -109,7 +109,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
             })
+<<<<<<< HEAD
             close.addEventListener("click", function() {
+=======
+            close.addEventListener("click", function()  {
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 overl.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -124,14 +128,22 @@ window.addEventListener("DOMContentLoaded", () => {
             overlay = document.querySelector(".overlay"),
             closen = document.querySelector(".popup-close");
 
+<<<<<<< HEAD
             descript.addEventListener("click", function() {
+=======
+            descript.addEventListener("click", function(){
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 overlay.style.display = "block"; 
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
+<<<<<<< HEAD
             closen.addEventListener("click", function() {
+=======
+            closen.addEventListener("click", function(){
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 overlay.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
@@ -145,7 +157,11 @@ window.addEventListener("DOMContentLoaded", () => {
             z = document.querySelector(".overlay"),
             c = document.querySelector(".popup-close");
 
+<<<<<<< HEAD
             descripton.addEventListener("click", function() {
+=======
+            descripton.addEventListener("click", function(){
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 z.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
@@ -165,14 +181,22 @@ window.addEventListener("DOMContentLoaded", () => {
             o = document.querySelector(".overlay"),
             cl = document.querySelector(".popup-close");
 
+<<<<<<< HEAD
             d.addEventListener("click", function() {
+=======
+            d.addEventListener("click", function(){
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 o.style.display = "block";
                 this.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
 
             })
+<<<<<<< HEAD
             cl.addEventListener("click", function() {
+=======
+            cl.addEventListener("click", function(){
+>>>>>>> 69f3b3c35e6f57c824235305f78c977c633f5335
                 o.style.display = "none";
                 more.classList.remove("more-splash");
                 document.body.style.overflow = "";
