@@ -80,15 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
                         hours.textContent = "00";
                     minutes.textContent = "00";
                     seconds.textContent = "00";
-                    }
-                 
-
-
-
-                
-        }
-                 
-     
+                    }            
+            }  
         };
 
         setClock("timer", deadLine);
@@ -98,109 +91,40 @@ window.addEventListener("DOMContentLoaded", () => {
 
         //Модальное окно
 
-        let more = document.querySelector(".more"),
-            overl = document.querySelector(".overlay"),
-            close = document.querySelector(".popup-close");
-
-            more.addEventListener("click", function() {
-                overl.style.display = "block";
-                this.classList.add("more-splash");
-                document.body.style.overflow = "hidden";
-
-
-            });
-            close.addEventListener("click", function() {
-                overl.style.display = "none";
-                more.classList.remove("more-splash");
-                document.body.style.overflow = "";
-
-
-                
-
-            });
-
-            //Модальное окно description-btn
-            let descript = document.getElementsByClassName("description-btn")[0],
+        let body = document.querySelector("body"),
+            more = document.querySelector(".more"),
             overlay = document.querySelector(".overlay"),
-            closen = document.querySelector(".popup-close");
+            close = document.querySelector(".popup-close"),
+            statusMessage = document.createElement("div");
+            statusMessage.classList.add("status");
 
-            descript.addEventListener("click", function() {
-                overlay.style.display = "block"; 
-                this.classList.add("more-splash");
+        const modalDisplay = () => {
+                overlay.style.display = "block";
+                more.classList.add("more-splash");
                 document.body.style.overflow = "hidden";
 
+            };
 
-            });
-            closen.addEventListener("click", function() {
+        const modalClose = () => {
                 overlay.style.display = "none";
                 more.classList.remove("more-splash");
+                statusMessage.innerHTML = "";
                 document.body.style.overflow = "";
-
-            });
-
-
-            //Модальное окно desription-btn(1)
-
-            let descripton = document.getElementsByClassName("description-btn")[1],
-            z = document.querySelector(".overlay"),
-            c = document.querySelector(".popup-close");
-
-            descripton.addEventListener("click", function() {
-                z.style.display = "block";
-                this.classList.add("more-splash");
-                document.body.style.overflow = "hidden";
-
-
-            });
-            c.addEventListener("click", function() {
-                z.style.display = "none";
-                more.classList.remove("more-splash");
-                document.body.style.overflow = "";
-
-            });
-
-
-            //Модальное окно desription-btn(2)
-            let d = document.getElementsByClassName("description-btn")[2],
-            o = document.querySelector(".overlay"),
-            cl = document.querySelector(".popup-close");
-
-            d.addEventListener("click", function() {
-                o.style.display = "block";
-                this.classList.add("more-splash");
-                document.body.style.overflow = "hidden";
-
-
-            });
-            cl.addEventListener("click", function() {
-                o.style.display = "none";
-                more.classList.remove("more-splash");
-                document.body.style.overflow = "";
-
-            });
-
             
-            //Модальное окно desription-btn(3)321
-            let desc = document.getElementsByClassName("description-btn")[3],
-            over = document.querySelector(".overlay"),
-            cloz = document.querySelector(".popup-close");
+        };
 
-            desc.addEventListener("click", function() {
-                over.style.display = "block";
-                this.classList.add("more-splash");
-                document.body.style.overflow = "hidden";
+        body.addEventListener("click", (e) => {
+                let target = e.target;
 
-
-            });
-            cloz.addEventListener("click", function() {
-                over.style.display = "none";
-                more.classList.remove("more-splash");
-                document.body.style.overflow = "";
-
-            });
-
-
-                //Формы
+                if (target.classList.contains("description-btn") || target.classList.contains("more")) {
+                    modalDisplay();
+                }
+                if (target.classList.contains("overlay") || target.classList.contains("popup-close")) {
+                    modalClose();
+                }
+        });
+            
+            //Формы
 
         let message = {
             loading: "Загрузка...",
@@ -209,20 +133,23 @@ window.addEventListener("DOMContentLoaded", () => {
         };
 
         let form = document.querySelector(".main-form"),
-            letters = document.getElementsByName("letter-form"),
-            input = document.getElementsByTagName("input"),
-            statusMessage = document.createElement("div");
-            
-            
+            subForm = document.querySelector("#form"),
+            input = form.getElementsByTagName("input"),
+            subInput = subForm.getElementsByTagName("input");
+           
+            const valid = (inp) => {
+                addEventListener ("input", () => {
+                 inp.value = inp.value.replace(/[^\d+]/ig, "");   
+                });
+            };
+        valid(input[0]);
+        valid(subInput[1]);
 
-            statusMessage.classList.add("status");
-
-        form.addEventListener("submit", function(event) {
+      
+     const sendForm = (elem) => {
+          elem.addEventListener("submit", function(event) {
             event.preventDefault();
-            form.appendChild(statusMessage);
-
-        
-
+            elem.appendChild(statusMessage);
 
             let request = new XMLHttpRequest();
             request.open("POST", "server.php");
@@ -252,14 +179,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
             for (let i = 0; i < input.length; i++) {
                 input[i].value = "";
-            }
+                }         
+            });
+         };   
          
-            
-        });
+        sendForm(form);
+        sendForm(subForm);    
+
+
+
+    });
 
     
         
-     }); 
+
 
 
 
