@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 window.addEventListener("DOMContentLoaded", () => {
     "use strict";
 
@@ -191,4 +191,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
     });
 
->>>>>>> 69f3b3c3e6f57c824235305f78c977c633f5335
+
