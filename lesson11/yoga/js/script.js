@@ -157,7 +157,7 @@ window.addEventListener("DOMContentLoaded", () => {
             request.setRequestHeader("Content-type", "application/json; charset=utf-8");
 
 
-            let formData = new FormData(form);
+            let formData = new FormData(elem);
 
                 let obj = {};
                 formData.forEach(function(value, key){
