@@ -152,8 +152,8 @@ window.addEventListener("DOMContentLoaded", () => {
             elem.appendChild(statusMessage);
            
            
-            function dataPost(data) {
-              return new Promise(function(resolve, reject){
+            function dataPost() {
+              return new Promise(function(resolve, reject) {
                 let request = new XMLHttpRequest();
                 request.open("POST", "server.php");
                 request.setRequestHeader("Content-type", "application/json; charset=utf-8");
@@ -178,12 +178,14 @@ window.addEventListener("DOMContentLoaded", () => {
                    reject();
                 }
             });
-
+                    
+                
            });//Promise End  
             }//End dataPost
            
 
-           
+                dataPost(formData)
+                .then(() => statusMessage.innerHTML = message.loading);
             
 
 
@@ -191,8 +193,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 input[i].value = "";
                 }
                 
-                dataPost(formData)
-                .then(() => statusMessage.innerHTML = message.loading);
+                
+                
                 
            
            
