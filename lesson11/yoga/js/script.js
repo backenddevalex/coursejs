@@ -200,11 +200,20 @@ window.addEventListener("DOMContentLoaded", () => {
             });
 
 
+            for (let i = 0; i < input.length; i++) {
+                input[i].value = "";
+                }         
+            });
          };   
          
         sendForm(form);
         sendForm(subForm);    
 
+
+    });
+=======
+
+    });
 
 
     });
