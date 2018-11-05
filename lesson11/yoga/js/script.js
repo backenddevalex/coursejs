@@ -1,3 +1,4 @@
+
 window.addEventListener("DOMContentLoaded", () => {
     "use strict";
 
@@ -108,7 +109,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const modalClose = () => {
                 overlay.style.display = "none";
                 more.classList.remove("more-splash");
-                statusMessage.style.display = "none";
+                statusMessage.innerHTML = "";
                 document.body.style.overflow = "";
             
         };
@@ -150,16 +151,13 @@ window.addEventListener("DOMContentLoaded", () => {
           elem.addEventListener("submit", function(event) {
             event.preventDefault();
             elem.appendChild(statusMessage);
-           
-           
-            function dataPost(data) {
-              return new Promise(function(resolve, reject){
-                let request = new XMLHttpRequest();
-                request.open("POST", "server.php");
-                request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+
+            let request = new XMLHttpRequest();
+            request.open("POST", "server.php");
+            request.setRequestHeader("Content-type", "application/json; charset=utf-8");
 
 
-             let formData = new FormData(elem);
+            let formData = new FormData(form);
 
                 let obj = {};
                 formData.forEach(function(value, key){
@@ -171,32 +169,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
             request.addEventListener("readystatechange", function(){
                 if (request.readyState < 4) {
-                    resolve();
+                    statusMessage.innerHTML = message.loading;
                 } else if (request.readyState === 4 && request.status === 200) {
-                    resolve();
+                    statusMessage.innerHTML = message.success;
                 } else {
-                   reject();
+                    statusMessage.innerHTML = message.failure;
                 }
-            });
-
-           });//Promise End  
-            }//End dataPost
-           
-
-           
-            
-
-
-            for (let i = 0; i < input.length; i++) {
-                input[i].value = "";
-                }
-                
-                dataPost(formData)
-                .then(() => statusMessage.innerHTML = message.loading);
-                
-           
-           
-           
             });
 
 
@@ -210,10 +188,7 @@ window.addEventListener("DOMContentLoaded", () => {
         sendForm(subForm);    
 
 
-    });
-=======
 
     });
 
 
-    });
