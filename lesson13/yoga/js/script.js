@@ -269,36 +269,21 @@ next.addEventListener("click", () => {
 
         totalValue.innerHTML = 0;
 
-        persons.addEventListener("change", function() {
-            personsSumm = +this.value;
-            total = (daysSumm + personsSumm)*4000;
+        function summ() {
+            personsSumm = +persons.value;
+            daysSumm = +restDays.value;
+            total = (daysSumm * personsSumm)*4000;
 
-            if (restDays.value == "" || persons.value == "") {
-                totalValue.innerHTML = 0;
-            } else {
-                totalValue.innerHTML = total;
-            }
-        });
-
-        restDays.addEventListener("change", function() {
-            daysSumm = +this.value;
-            total = (daysSumm + personsSumm)*4000;
-
-            if(persons.value == "" || restDays.value == "") {
-                totalValue.innerHTML = 0;
-            } else {
-                totalValue.innerHTML = total;
-            }
-        });
-
-        place.addEventListener("change", function() {
-            if(restDays.value == "" || persons.value == "") {
-                totalValue.innerHTML = 0;
-            } else {
-                let a = total;
-                totalValue.innerHTML = a * this.options[this.selectedIndex].value;
-            }
-        });
+        if(restDays.value == "" || persons.value == "" || restDays.value == 0 || persons.value == 0) {
+            totalValue.innerHTML = 0;
+        } else {
+            totalValue.innerHTML = total * place.options[place.selectedIndex].value;
+        }
+        }
+        
+        persons.addEventListener('change', summ);
+        restDays.addEventListener('change', summ);
+        place.addEventListener('change', summ);
 
         const validCalc = (val) => {
             addEventListener("input", () => {
